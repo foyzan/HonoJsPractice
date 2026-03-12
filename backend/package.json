@@ -12,6 +12,7 @@
     "hono": "^4.12.7"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260310.1",
     "prisma": "^6.19.2",
     "wrangler": "^4.4.0"
   }
