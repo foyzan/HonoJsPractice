@@ -3,12 +3,8 @@ import { Hono } from "hono";
 import { PrismaClient } from "../generated/prisma/client";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { decode, sign, verify } from "hono/jwt";
-export const authRouter = new Hono<{
-    Bindings : {
-        DATABASE_URL : string,
-        JWT_SECRET: string
-    }
-}>()
+import { AppEnv } from "../type/type";
+export const authRouter = new Hono<AppEnv>()
 
 authRouter.post("/signup", async (c) => {
   const prisma = new PrismaClient({
